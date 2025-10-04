@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_unit_budget_user,access_unit_budget_user,model_unit_budget,base.group_user,1,1,1,0
+access_unit_budget_system,access_unit_budget_system,model_unit_budget,base.group_system,1,1,1,1
+access_unit_budget_line_user,access_unit_budget_line_user,model_unit_budget_line,base.group_user,1,1,1,0
+access_unit_budget_line_system,access_unit_budget_line_system,model_unit_budget_line,base.group_system,1,1,1,1
