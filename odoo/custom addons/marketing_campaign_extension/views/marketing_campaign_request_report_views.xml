@@ -1,0 +1,51 @@
+<odoo>
+    <record id="view_marketing_campaign_request_report_tree" model="ir.ui.view">
+        <field name="name">marketing.campaign.request.report.tree</field>
+        <field name="model">marketing.campaign.request.report</field>
+        <field name="arch" type="xml">
+            <list string="Campaign Request Report">
+                <field name="campaign_name"/>
+                <field name="campaign_start_date"/>
+                <field name="campaign_end_date"/>
+                <field name="campaign_status"/>
+                <field name="request_name"/>
+                <field name="unit_name"/>
+                <field name="requestor_name"/>
+                <field name="request_type"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_marketing_campaign_request_report_search" model="ir.ui.view">
+        <field name="name">marketing.campaign.request.report.search</field>
+        <field name="model">marketing.campaign.request.report</field>
+        <field name="arch" type="xml">
+            <search string="Campaign Request Report">
+                <field name="campaign_name"/>
+                <field name="campaign_status"/>
+                <field name="request_name"/>
+                <field name="unit_name"/>
+                <field name="requestor_name"/>
+                <field name="request_type"/>
+                <group expand="0" string="Group By">
+                    <filter string="Campaign" name="campaign_name" context="{'group_by': 'campaign_name'}"/>
+                    <filter string="Status" name="campaign_status" context="{'group_by': 'campaign_status'}"/>
+                    <filter string="Unit" name="unit_name" context="{'group_by': 'unit_name'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_marketing_campaign_request_report" model="ir.actions.act_window">
+        <field name="name">Campaign Request Report</field>
+        <field name="res_model">marketing.campaign.request.report</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_marketing_campaign_request_report_tree"/>
+        <field name="search_view_id" ref="view_marketing_campaign_request_report_search"/>
+    </record>
+
+    <menuitem id="menu_marketing_campaign_request_report_root" 
+              name="Campaign Request Report" 
+              action="action_marketing_campaign_request_report" 
+              sequence="110"/>
+</odoo>
