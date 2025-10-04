@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_marketing_request_user,marketing.request.user,model_marketing_request,base.group_user,1,1,1,1
+access_marketing_request_manager,marketing.request.manager,model_marketing_request,base.group_system,1,1,1,1
+access_marketing_request_budget_line_amount_user,marketing.request.budget.line.amount.user,model_marketing_request_budget_line_amount,base.group_user,1,1,1,1
+access_marketing_request_budget_line_amount_manager,marketing.request.budget.line.amount.manager,model_marketing_request_budget_line_amount,base.group_system,1,1,1,1
