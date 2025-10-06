@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Product Template -->
+        <record id="view_franchisee_management_product_template_form_inherited" model="ir.ui.view">
+            <field name="name">product.form.franchise.management.inherited</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+
+                    <field class="oe_inline" name="portfolio_id" />
+                    <field name="has_size" invisible="True" />
+                    <field name="manufacturer_id" invisible="True" />
+                    <field name="brand_id" />
+                    <field name="brand_type" />
+                    
+                </xpath>
+                <xpath expr="//group[@name='group_lots_and_weight']" position="after">
+
+                    <group name="product_dimensions" string="Product Dimensions" invisible="not has_size">
+                        <field name="product_size_id" />
+                        <label for="product_length"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="product_length"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="product_length" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_length_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_width"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="product_width"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="product_width" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_width_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_height"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="product_height"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="product_height" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_height_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_thickness"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="product_thickness"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="product_thickness" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_thickness_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <field name="size_in_mm"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <field name="size_in_inch"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <label for="area_per_box_sqmtr"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="area_per_box_sqmtr"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="area_per_box_sqmtr" class="oe_inline" />
+                            <span class="oe_inline">m²</span>
+                        </div>
+                        <label for="area_per_box_sqft"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="area_per_box_sqft"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="area_per_box_sqft" class="oe_inline" />
+                            <span class="oe_inline">ft²</span>
+                        </div>
+                        <label for="weight" string="Weight Per Box(in Kg)"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant" />
+                        <div class="o_row" name="weight"
+                            invisible="product_variant_count &gt; 1 and not is_product_variant">
+                            <field name="weight" class="oe_inline" />
+                            <field name="weight_uom_name" />
+                        </div>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group[@name='sale']" position="before">
+                    <group string="Product Specifications">
+                        <group>
+                            <field name="item_code" />
+                            <field name="item_name" />
+                            <field name="item_group_id" />
+                            <field name="vendor_item_group_id" />
+                            <field name="product_series_id" />
+                        </group>
+                        <group>
+                            <field name="item_classification" />
+                            <field name="product_family_id" />
+                            <field name="product_slab_id" />
+                            <field name="product_quality_id" />
+                            <field name="vendor_product_quality_id" />
+                            <field name="grade_id" />
+                            <field name="printing_type_id" />
+                            <field name="segment" />
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="categ_id" string="Category" />
+                    <field name="packaging_id" string="Packaging" />
+                    <field name="product_categ_id" string="Product Category" />
+                    <field name="prod_type_categ_id" />
+                    <field name="model_id" />
+                    <field name="sub_model_id" />
+                    <field name="body_type" />
+                    <field name="product_color_id" />
+                    <field name="product_finish_id" />
+                </xpath>
+
+                <xpath expr="//field[@name='categ_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//label[@for='volume']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//div[@name='volume']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//label[@for='weight']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//div[@name='weight']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="franchisee_product_normal_form_view" model="ir.ui.view">
+            <field name="name">franchisee.product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='id']" position="replace">
+                    <group>
+                        <group>
+                            <field name="id" string="#ID:" />
+                           
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="franchisee_product_easy_edit_form_view" model="ir.ui.view">
+            <field name="name">franchisee.product.product.easy.edit.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_variant_easy_edit_view" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//group[@name='weight']" position="after">
+                    <group name="product_dimensions" string="Product Dimensions">
+                        <label for="product_length" />
+                        <div class="o_row" name="product_length">
+                            
+                            <field name="product_length" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_length_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_width" />
+                        <div class="o_row" name="product_width">
+                            <field name="product_width" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_width_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_height" />
+                        <div class="o_row" name="product_height">
+                            <field name="product_height" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_height_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <label for="product_thickness" />
+                        <div class="o_row" name="product_thickness">
+                            <field name="product_thickness" class="oe_inline" />
+                            <span class="oe_inline">mm</span>
+                            <field name="product_thickness_inch" class="oe_inline ms-3" />
+                            <span class="oe_inline">in</span>
+                        </div>
+                        <field name="size_in_mm" />
+                        <field name="size_in_inch" />
+                        <label for="area_per_box_sqmtr" />
+                        <div class="o_row" name="area_per_box_sqmtr">
+                            <field name="area_per_box_sqmtr" class="oe_inline" />
+                            <span class="oe_inline">m²</span>
+                        </div>
+                        <label for="area_per_box_sqft" />
+                        <div class="o_row" name="area_per_box_sqft">
+                            <field name="area_per_box_sqft" class="oe_inline" />
+                            <span class="oe_inline">ft²</span>
+                        </div>
+                    </group>
+                    <group>
+                    </group>
+                </xpath>
+                <xpath expr="//sheet/group[3]" position="before">
+                    <group string="Product Specifications">
+                        <group>
+                            <field name="brand_id" />
+                            <field name="brand_type" />
+                            <field name="item_classification" />
+                            <field name="product_family_id" />
+                            <field name="product_series_id" />
+                            <field name="product_slab_id" />
+                        </group>
+                        <group>
+                            <field name="product_quality_id" />
+                            <field name="vendor_product_quality_id" />
+                            <field name="grade_id" />
+                            <field name="printing_type_id" />
+                            <field name="segment" />
+                        </group>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+
+        <record id="product_pricelist_item_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.pricelist.item.form.inherit</field>
+            <field name="model">product.pricelist.item</field>
+            <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="after">
+                    <field name="item_group_id" options="{'no_create':1}" invisible="display_applied_on != '3_item_group'" required="display_applied_on == '3_item_group'"/>
+                    <field name="product_slab_id" options="{'no_create':1}" invisible="display_applied_on != '4_product_slab'" required="display_applied_on == '4_product_slab'"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
