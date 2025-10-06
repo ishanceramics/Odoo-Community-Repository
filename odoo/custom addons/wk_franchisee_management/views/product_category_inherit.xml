@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record id="view_category_form_size_inherit" model="ir.ui.view">
+            <field name="name">product.category.size.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="has_size" class="oe_inline"/>
+                    <field name="packaging_ids" widget="many2many_tags" placeholder="Select Packaging"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
