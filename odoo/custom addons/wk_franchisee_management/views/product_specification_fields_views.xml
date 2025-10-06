@@ -1,0 +1,876 @@
+<odoo>
+	<data>
+        <!-- Product Manufacturer Views-->
+		<record model="ir.ui.view" id="wk_product_manufacturer_view_form">
+			<field name="name">wk.product.manufacturer.form</field>
+			<field name="model">wk.product.manufacturer</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<label for="name" /><br />
+						<field name="name" class="h1"/>
+						<group class="mt-3">
+							<group>
+								<field name="brand_ids" widget="many2many_tags" />
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_manufacturer_view_list">
+			<field name="name">wk.product.manufacturer.list</field>
+			<field name="model">wk.product.manufacturer</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="brand_ids" />
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_manufacturer_action">
+			<field name="name">Product Manufacturer(Vendor)</field>
+			<field name="path">product-manufacturer</field>
+			<field name="res_model">wk.product.manufacturer</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_manufacturer_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product manufacturer(vendor) found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+        <!-- Product Family Views-->
+		<record model="ir.ui.view" id="wk_product_family_view_form">
+			<field name="name">wk.product.family.form</field>
+			<field name="model">wk.product.family</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_family_view_list">
+			<field name="name">wk.product.family.list</field>
+			<field name="model">wk.product.family</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_family_action">
+			<field name="name">Product Family</field>
+			<field name="path">product-family</field>
+			<field name="res_model">wk.product.family</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_family_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product family found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+        <!-- Product Slab Views-->
+		<record model="ir.ui.view" id="wk_product_slab_view_form">
+			<field name="name">wk.product.slab.form</field>
+			<field name="model">wk.product.slab</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_slab_view_list">
+			<field name="name">wk.product.slab.list</field>
+			<field name="model">wk.product.slab</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_slab_action">
+			<field name="name">Product Slab</field>
+			<field name="path">product-slab</field>
+			<field name="res_model">wk.product.slab</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_slab_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product slab found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+        <!-- Product Grade Views-->
+		<record model="ir.ui.view" id="wk_product_grade_view_form">
+			<field name="name">wk.product.grade.form</field>
+			<field name="model">wk.product.grade</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_grade_view_list">
+			<field name="name">wk.product.grade.list</field>
+			<field name="model">wk.product.grade</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="wk_product_grade_action">
+			<field name="name">Product Grade</field>
+			<field name="path">product-grade</field>
+			<field name="res_model">wk.product.grade</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_grade_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product grade found. Let's create one!
+                </p>
+            </field>
+		</record>
+        
+		
+		<!-- Product Series Views-->
+		<record model="ir.ui.view" id="wk_product_series_view_form">
+			<field name="name">wk.product.series.form</field>
+			<field name="model">wk.product.series</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_series_view_list">
+			<field name="name">wk.product.series.list</field>
+			<field name="model">wk.product.series</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_series_action">
+			<field name="name">Product Series</field>
+			<field name="path">product-series</field>
+			<field name="res_model">wk.product.series</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_series_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product series found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+        <!-- Product Model Views-->
+		<record model="ir.ui.view" id="wk_product_model_view_form">
+			<field name="name">wk.product.model.form</field>
+			<field name="model">wk.product.model</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_model_view_list">
+			<field name="name">wk.product.model.list</field>
+			<field name="model">wk.product.model</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description"/>
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_model_action">
+			<field name="name">Product Model</field>
+			<field name="path">product-model</field>
+			<field name="res_model">wk.product.model</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_model_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product model found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+
+        <!-- Product Submodel Views-->
+        <record model="ir.ui.view" id="wk_product_submodel_view_form">
+			<field name="name">wk.product.submodel.form</field>
+			<field name="model">wk.product.submodel</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_submodel_view_list">
+			<field name="name">wk.product.submodel.list</field>
+			<field name="model">wk.product.submodel</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description"/>
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_submodel_action">
+			<field name="name">Product Submodel</field>
+			<field name="path">product-submodel</field>
+			<field name="res_model">wk.product.submodel</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_submodel_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product sub-model found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+
+        <!-- Product Brand Views-->
+        <record model="ir.ui.view" id="wk_product_brand_view_form">
+			<field name="name">wk.product.brand.form</field>
+			<field name="model">wk.product.brand</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<label for="name" /><br />
+						<field name="name" class="h1"/>
+						<group class="mt-3">
+							<group>
+								<field name="brand_type"/>
+								<field name="manufacturer_id"/>
+								<field name="description"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_brand_view_list">
+			<field name="name">wk.product.brand.list</field>
+			<field name="model">wk.product.brand</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="brand_type"/>
+					<field name="manufacturer_id"/>
+					<field name="description"/>
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_brand_action">
+			<field name="name">Product Brand</field>
+			<field name="path">product-brand</field>
+			<field name="res_model">wk.product.brand</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_brand_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product brand found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Product Size Views-->
+        <record model="ir.ui.view" id="wk_product_size_view_form">
+			<field name="name">wk.product.size.form</field>
+			<field name="model">wk.product.size</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<label for="name" /><br />
+						<field name="name" class="h1" />
+						<group class="mt-3">
+							<group>
+								<field name="description"/>
+							</group>
+						</group>
+						<group class="mt-3">
+							<group>
+								<label for="product_length" />
+								<div name="product_length">
+									<field name="product_length" class="oe_inline" />
+									<span class="oe_inline">mm</span>
+								</div>
+								<label for="product_width" />
+								<div name="product_width">
+									<field name="product_width" class="oe_inline" />
+									<span class="oe_inline">mm</span>
+								</div>
+								<label for="product_height" />
+								<div name="product_height">
+									<field name="product_height" class="oe_inline" />
+									<span class="oe_inline">mm</span>
+								</div>
+								<label for="product_thickness" />
+								<div name="product_thickness">
+									<field name="product_thickness" class="oe_inline" />
+									<span class="oe_inline">mm</span>
+								</div>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_size_view_list">
+			<field name="name">wk.product.size.list</field>
+			<field name="model">wk.product.size</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_size_action">
+			<field name="name">Product Size</field>
+			<field name="path">product-size</field>
+			<field name="res_model">wk.product.size</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_size_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product size found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Product Category Views-->
+		<record model="ir.ui.view" id="wk_product_category_view_form">
+			<field name="name">wk.product.category.form</field>
+			<field name="model">wk.product.category</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_category_view_list">
+			<field name="name">wk.product.category.list</field>
+			<field name="model">wk.product.category</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_category_action">
+			<field name="name">Product Category</field>
+			<field name="path">product-category</field>
+			<field name="res_model">wk.product.category</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_category_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product category found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+
+		<!-- Product Category Type Views-->
+		<record model="ir.ui.view" id="wk_product_type_category_view_form">
+			<field name="name">wk.product.type.category.form</field>
+			<field name="model">wk.product.type.category</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_type_category_view_list">
+			<field name="name">wk.product.type.category.list</field>
+			<field name="model">wk.product.type.category</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_type_category_action">
+			<field name="name">Product Type Category</field>
+			<field name="path">product-type-category</field>
+			<field name="res_model">wk.product.type.category</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_type_category_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product category type found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Product Item Group Views-->
+		<record model="ir.ui.view" id="wk_item_group_view_form">
+			<field name="name">wk.item.group.form</field>
+			<field name="model">wk.item.group</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+								<field name="product_ids" invisible="1" widget="many2many_tags" options="{'no_create': True, 'no_open': True}" />
+								<field name="product_product_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_item_group_view_list">
+			<field name="name">wk.item.group.list</field>
+			<field name="model">wk.item.group</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_item_group_action">
+			<field name="name">Product Item Group</field>
+			<field name="path">product-item-group</field>
+			<field name="res_model">wk.item.group</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_item_group_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product item group found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<!-- Product Vendor Item Group Views-->
+		<record model="ir.ui.view" id="wk_vendor_item_group_view_form">
+			<field name="name">wk.vendor.item.group.form</field>
+			<field name="model">wk.vendor.item.group</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_vendor_item_group_view_list">
+			<field name="name">wk.vendor.item.group.list</field>
+			<field name="model">wk.vendor.item.group</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_vendor_item_group_action">
+			<field name="name">Vendors Item Group</field>
+			<field name="path">vendors-item-group</field>
+			<field name="res_model">wk.vendor.item.group</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_vendor_item_group_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No vendor item group found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<!-- Product Body Type Views-->
+		<record model="ir.ui.view" id="wk_product_body_type_view_form">
+			<field name="name">wk.product.body.type.form</field>
+			<field name="model">wk.product.body.type</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_body_type_view_list">
+			<field name="name">wk.product.body.type.list</field>
+			<field name="model">wk.product.body.type</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_body_type_action">
+			<field name="name">Product Body Type</field>
+			<field name="path">product-body-type</field>
+			<field name="res_model">wk.product.body.type</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_body_type_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product body type found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+
+		<!-- Product Quality Views-->
+		<record model="ir.ui.view" id="wk_product_quality_view_form">
+			<field name="name">wk.product.quality.form</field>
+			<field name="model">wk.product.quality</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_quality_view_list">
+			<field name="name">wk.product.quality.list</field>
+			<field name="model">wk.product.quality</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_quality_action">
+			<field name="name">Product Quality</field>
+			<field name="path">product-quality</field>
+			<field name="res_model">wk.product.quality</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_quality_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product quality record found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Vendor Product Quality Views-->
+		<record model="ir.ui.view" id="wk_vendor_product_quality_view_form">
+			<field name="name">wk.vendor.product.quality.form</field>
+			<field name="model">wk.vendor.product.quality</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_vendor_product_quality_view_list">
+			<field name="name">wk.vendor.product.quality.list</field>
+			<field name="model">wk.vendor.product.quality</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_vendor_product_quality_action">
+			<field name="name">Vendor's Product Quality</field>
+			<field name="path">vendors-product-quality</field>
+			<field name="res_model">wk.vendor.product.quality</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_vendor_product_quality_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No vendor's product quality record found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Printing Type Views-->
+		<record model="ir.ui.view" id="wk_printing_type_view_form">
+			<field name="name">wk.printing.type.form</field>
+			<field name="model">wk.printing.type</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_printing_type_view_list">
+			<field name="name">wk.printing.type.list</field>
+			<field name="model">wk.printing.type</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_printing_type_action">
+			<field name="name">Printing Type</field>
+			<field name="path">printing-type</field>
+			<field name="res_model">wk.printing.type</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_printing_type_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No printing type record found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Product Color Views-->
+		<record model="ir.ui.view" id="wk_product_color_view_form">
+			<field name="name">wk.product.color.form</field>
+			<field name="model">wk.product.color</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_color_view_list">
+			<field name="name">wk.product.color.list</field>
+			<field name="model">wk.product.color</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_color_action">
+			<field name="name">Product Color</field>
+			<field name="path">product-color</field>
+			<field name="res_model">wk.product.color</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_color_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product color record found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<!-- Product Finish Views-->
+		<record model="ir.ui.view" id="wk_product_finish_view_form">
+			<field name="name">wk.product.finish.form</field>
+			<field name="model">wk.product.finish</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="description" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_finish_view_list">
+			<field name="name">wk.product.finish.list</field>
+			<field name="model">wk.product.finish</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="description" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_finish_action">
+			<field name="name">Product Finish</field>
+			<field name="path">product-finish</field>
+			<field name="res_model">wk.product.finish</field>
+			<field name="view_mode">list,form</field>
+			<field name="view_id" ref="wk_franchisee_management.wk_product_finish_view_list" />
+			<field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product finish record found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+
+		<menuitem action="wk_item_group_action" id="menu_wk_item_group" sequence="2" parent="sale.product_menu_catalog" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_manufacturer_action" id="menu_wk_product_manufacturer" sequence="40" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_brand_action" id="menu_wk_product_brand" sequence="41" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_family_action" id="menu_wk_product_family" sequence="42" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_slab_action" id="menu_wk_product_slab" sequence="43" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_grade_action" id="menu_wk_product_grade" sequence="44" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_series_action" id="menu_wk_product_series" sequence="45" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_model_action" id="menu_wk_product_model" sequence="46" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_submodel_action" id="menu_wk_product_submodel" sequence="47" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_size_action" id="menu_wk_product_size" sequence="48" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_category_action" id="menu_wk_product_category" sequence="49" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_type_category_action" id="menu_wk_product_type_category" sequence="50" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_vendor_item_group_action" id="menu_wk_vendor_item_group" sequence="52" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_body_type_action" id="menu_wk_product_body_type" sequence="53" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_quality_action" id="menu_wk_product_quality" sequence="54" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_vendor_product_quality_action" id="menu_wk_vendor_product_quality" sequence="55" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_printing_type_action" id="menu_wk_printing_type" sequence="56" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_color_action" id="menu_wk_product_color" sequence="57" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+		<menuitem action="wk_product_finish_action" id="menu_wk_product_finish" sequence="58" parent="sale.prod_config_main" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+	</data>
+</odoo>
