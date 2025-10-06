@@ -1,0 +1,150 @@
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="franchisee_unit_template_view_form">
+			<field name="name">franchisee.unit.template.form</field>
+			<field name="model">franchisee.unit.template</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+					</header>
+					<sheet>
+                        <span><label for="name" /></span> <br />
+						<field name="name" class="h1 mb-4" />
+						<field name="code" class="h3 mb-3" readonly="1"/>
+
+                        <group>
+                            <group>
+                                <field name="unit_type" />
+                                <field name="product_category_ids" widget="many2many_tags" />
+                            </group>
+                            <group>
+                                <field name="segment" />
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="franchisee_unit_details" string="Franchisee Unit Details">
+                                <group>
+                                    <group string="Infrastructure Requirements">
+                                        <label for="display_area_req" />
+                                        <div>
+                                            <field name="display_area_req"/><br />
+                                        </div>
+                                        <label for="showroom_location_id" />
+                                        <div>
+                                            <field name="showroom_location_id" widget="selection" required="1" /><br />
+                                        </div>
+                                        <label for="warehouse_area_req" />
+                                        <div>
+                                            <field name="warehouse_area_req"/><br />
+                                        </div>
+                                        <label for="warehouse_location_id" />
+                                        <div>
+                                            <field name="warehouse_location_id" widget="selection" required="1" /><br />
+                                        </div>
+                                        <label for="working_area_id" />
+                                        <div>
+                                            <field name="working_area_id" widget="selection" required="1" /><br />
+                                        </div>
+                                        <label for="covering_area_id" />
+                                        <div>
+                                            <field name="covering_area_id" widget="selection" required="1" /><br />
+                                        </div>
+                                        <label for="total_area" />
+                                        <div>
+                                            <field name="total_area"/><br />
+                                        </div>
+                                    </group>
+                                    <group string="Financial Configuration">
+                                        <label for="proposed_investment" />
+                                        <div>
+                                            <field name="proposed_investment" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}"/><br />
+                                        </div>
+                                        <label for="prop_franchisee_margin" />
+                                        <div>
+                                            <field name="prop_franchisee_margin" /><br />
+                                        </div>
+                                        <label for="franchise_fee" />
+                                        <div>
+                                            <field name="franchise_fee" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" /><br />
+                                        </div>
+                                        <field name="currency_id" invisible="1" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Operational Requirements">
+                                        <label for="no_of_employees_req" />
+                                        <div>
+                                            <field name="no_of_employees_req" /><br />
+                                        </div>
+                                        <label for="software_license_req" />
+                                        <div>
+                                            <field name="software_license_req" /><br />
+                                        </div>
+                                    </group>
+
+                                    <group string="Sales and Inventory">
+                                        <label for="projected_sales" />
+                                        <div>
+                                            <field name="projected_sales" widget="monetary" options="{'currency_field': 'currency_id', 'field_digits': True}" /><br />
+                                        </div>
+                                        <label for="prop_sales_mix_ratio" />
+                                        <div>
+                                            <field name="prop_sales_mix_ratio" /><br />
+                                        </div>
+                                        <label for="is_inventory" />
+                                        <div>
+                                            <field name="is_inventory" widget="selection" /><br />
+                                        </div>
+                                        <label for="franchisee_level" />
+                                        <div>
+                                            <field name="franchisee_level" /><br />
+                                        </div>
+                                    </group>
+                                </group>
+                                
+                            </page>
+                        </notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="franchisee_unit_template_view_list">
+			<field name="name">franchisee.unit.template.list</field>
+			<field name="model">franchisee.unit.template</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="code"/>
+					<field name="unit_type" />
+					<field name="franchisee_level"/>
+					<field name="is_inventory"/>
+				</list>
+			</field>
+		</record>
+
+	
+
+		<record model="ir.actions.act_window" id="franchisee_unit_template_action">
+			<field name="name">Franchisee Unit Templates</field>
+            <field name="path">franchisee-unit-templates</field>
+			<field name="res_model">franchisee.unit.template</field>
+			<field name="view_mode">list,form</field>
+            <field name="view_id" ref="wk_franchisee_management.franchisee_unit_template_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No franchisee unit template found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+        <menuitem id="menu_franchisee_management" name="Franchisee Management"
+            web_icon="wk_franchisee_management,static/src/img/web_icon.png"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+		<menuitem action="franchisee_unit_template_action" name="Unit Templates"
+            id="menu_franchisee_unit_template" sequence="1"
+            parent="wk_franchisee_management.menu_franchisee_management"
+            groups="wk_franchisee_management.franchisee_security_manager_group"/>
+	</data>
+</odoo>
