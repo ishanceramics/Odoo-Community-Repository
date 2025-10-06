@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate='0'>
+        <record id="age_record_1" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">18-25</field>
+        </record>
+        <record id="age_record_2" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">26-35</field>
+        </record>
+        <record id="age_record_3" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">36-45</field>
+        </record>
+        <record id="age_record_4" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">46-55</field>
+        </record>
+        <record id="age_record_5" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">56-65</field>
+        </record>
+        <record id="age_record_6" model="wk.field.values">
+            <field name="field_type">age</field>
+            <field name="field_value">66 &amp; Above</field>
+        </record>
+
+        <record id="firm_type_record_1" model="wk.field.values">
+            <field name="field_type">firm_type</field>
+            <field name="field_value">Proprietor</field>
+        </record>
+        <record id="firm_type_record_2" model="wk.field.values">
+            <field name="field_type">firm_type</field>
+            <field name="field_value">Partner</field>
+        </record>
+        <record id="firm_type_record_3" model="wk.field.values">
+            <field name="field_type">firm_type</field>
+            <field name="field_value">LLP</field>
+        </record>
+        <record id="firm_type_record_4" model="wk.field.values">
+            <field name="field_type">firm_type</field>
+            <field name="field_value">Pvt Ltd</field>
+        </record>
+        <record id="firm_type_record_5" model="wk.field.values">
+            <field name="field_type">firm_type</field>
+            <field name="field_value">Organisation</field>
+        </record>
+
+        <record id="experience_in_business_record_1" model="wk.field.values">
+            <field name="field_type">experience_in_business</field>
+            <field name="field_value">No Experience</field>
+        </record>
+        <record id="experience_in_business_record_2" model="wk.field.values">
+            <field name="field_type">experience_in_business</field>
+            <field name="field_value">0-5</field>
+        </record>
+        <record id="experience_in_business_record_3" model="wk.field.values">
+            <field name="field_type">experience_in_business</field>
+            <field name="field_value">6-10</field>
+        </record>
+        <record id="experience_in_business_record_4" model="wk.field.values">
+            <field name="field_type">experience_in_business</field>
+            <field name="field_value">11-20</field>
+        </record>
+        <record id="experience_in_business_record_5" model="wk.field.values">
+            <field name="field_type">experience_in_business</field>
+            <field name="field_value">20+</field>
+        </record>
+
+        <record id="current_profession_record_1" model="wk.field.values">
+            <field name="field_type">current_profession</field>
+            <field name="field_value">Business</field>
+        </record>
+        <record id="current_profession_record_2" model="wk.field.values">
+            <field name="field_type">current_profession</field>
+            <field name="field_value">Private Job</field>
+        </record>
+        <record id="current_profession_record_3" model="wk.field.values">
+            <field name="field_type">current_profession</field>
+            <field name="field_value">Professional</field>
+        </record>
+        <record id="current_profession_record_4" model="wk.field.values">
+            <field name="field_type">current_profession</field>
+            <field name="field_value">Student</field>
+        </record>
+        <record id="current_profession_record_5" model="wk.field.values">
+            <field name="field_type">current_profession</field>
+            <field name="field_value">Investor</field>
+        </record>
+
+        <record id="property_status_record_1" model="wk.field.values">
+            <field name="field_type">property_status</field>
+            <field name="field_value">Owned</field>
+        </record>
+        <record id="property_status_record_2" model="wk.field.values">
+            <field name="field_type">property_status</field>
+            <field name="field_value">Rented</field>
+        </record>
+        <record id="property_status_record_3" model="wk.field.values">
+            <field name="field_type">property_status</field>
+            <field name="field_value">Family Owned</field>
+        </record>
+        <record id="property_status_record_4" model="wk.field.values">
+            <field name="field_type">property_status</field>
+            <field name="field_value">Others</field>
+        </record>
+
+        <record id="looking_for_franchisee_record_1" model="wk.field.values">
+            <field name="field_type">looking_for_franchisee</field>
+            <field name="field_value">Self</field>
+        </record>
+        <record id="looking_for_franchisee_record_2" model="wk.field.values">
+            <field name="field_type">looking_for_franchisee</field>
+            <field name="field_value">Son</field>
+        </record>
+        <record id="looking_for_franchisee_record_3" model="wk.field.values">
+            <field name="field_type">looking_for_franchisee</field>
+            <field name="field_value">Relative</field>
+        </record>
+        <record id="looking_for_franchisee_record_4" model="wk.field.values">
+            <field name="field_type">looking_for_franchisee</field>
+            <field name="field_value">Others</field>
+        </record>
+
+        <record id="is_this_property_available_record_1" model="wk.field.values">
+            <field name="field_type">is_this_property_available</field>
+            <field name="field_value">Immediate</field>
+        </record>
+        <record id="is_this_property_available_record_2" model="wk.field.values">
+            <field name="field_type">is_this_property_available</field>
+            <field name="field_value">Can Be Arranged</field>
+        </record>
+        <record id="is_this_property_available_record_3" model="wk.field.values">
+            <field name="field_type">is_this_property_available</field>
+            <field name="field_value">Under Construction</field>
+        </record>
+
+        <record id="working_area_record_1" model="wk.field.values">
+            <field name="field_type">working_area</field>
+            <field name="field_value">Town</field>
+        </record>
+        <record id="working_area_record_2" model="wk.field.values">
+            <field name="field_type">working_area</field>
+            <field name="field_value">District</field>
+        </record>
+
+        <record id="covering_area_record_1" model="wk.field.values">
+            <field name="field_type">covering_area</field>
+            <field name="field_value">Town</field>
+        </record>
+        <record id="covering_area_record_2" model="wk.field.values">
+            <field name="field_type">covering_area</field>
+            <field name="field_value">District</field>
+        </record>
+        <record id="covering_area_record_3" model="wk.field.values">
+            <field name="field_type">covering_area</field>
+            <field name="field_value">Assigned Territory</field>
+        </record>
+        <record id="covering_area_record_4" model="wk.field.values">
+            <field name="field_type">covering_area</field>
+            <field name="field_value">40 Km appx</field>
+        </record>
+
+        <record id="warehouse_location_record_1" model="wk.field.values">
+            <field name="field_type">warehouse_location</field>
+            <field name="field_value">Adjoining to store</field>
+        </record>
+        <record id="warehouse_location_record_2" model="wk.field.values">
+            <field name="field_type">warehouse_location</field>
+            <field name="field_value">Outskirt of city or Industrial area</field>
+        </record>
+
+        <record id="showroom_location_record_1" model="wk.field.values">
+            <field name="field_type">showroom_location</field>
+            <field name="field_value">Main City</field>
+        </record>
+        <record id="showroom_location_record_2" model="wk.field.values">
+            <field name="field_type">showroom_location</field>
+            <field name="field_value">Main City or Highway</field>
+        </record>
+        <record id="showroom_location_record_3" model="wk.field.values">
+            <field name="field_type">showroom_location</field>
+            <field name="field_value">Adjoining to Warehouse</field>
+        </record>
+        <record id="showroom_location_record_4" model="wk.field.values">
+            <field name="field_type">showroom_location</field>
+            <field name="field_value">Main City / Highway / outskirt of city</field>
+        </record>
+    </data>
+</odoo>
