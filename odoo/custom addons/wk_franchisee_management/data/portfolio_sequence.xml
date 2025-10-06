@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate='1'>
+        <record id="product_portfolio_sequence" model="ir.sequence">
+            <field name="name">Portfolio No</field>
+            <field name="code">wk.product.portfolio</field>
+            <field name="prefix">PRTF</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+</odoo>
