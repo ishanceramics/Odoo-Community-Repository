@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+
+    <record id="franchisee_security_category" model="ir.module.category">
+        <field name="name">Franchisee Management</field>
+    </record>
+
+    <record id="franchisee_security_user_group" model="res.groups">
+        <field name="name">Franchisee User</field>
+        <field name="category_id" ref= "franchisee_security_category"/>
+    </record>
+
+    <record id="franchisee_security_manager_group" model="res.groups">
+        <field name="name">Franchisee Manager</field>
+        <field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"/>
+        <field name="category_id" ref= "franchisee_security_category"/>
+        <field name="implied_ids" eval= "[(4,ref('franchisee_security_user_group'))]"/>
+    </record>
+
+</data>
+
+<data>
+
+
+    <!-- franchisee manager rule -->
+    <record id="franchisee_manager_template_rule" model="ir.rule">
+        <field name="name">Franchise Unit Templates for Manager</field>
+        <field name="model_id" ref="wk_franchisee_management.model_franchisee_unit_template"/>
+        <field name="groups" eval="[(4,ref('wk_franchisee_management.franchisee_security_manager_group'))]"/>
+        <field name="domain_force">[(1, '=',1)]</field>
+    </record>
+
+</data>
+
+
+</odoo>
