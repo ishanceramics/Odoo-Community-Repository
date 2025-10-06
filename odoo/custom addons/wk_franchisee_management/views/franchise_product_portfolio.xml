@@ -1,0 +1,103 @@
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="wk_product_portfolio_view_form">
+			<field name="name">wk.product.portfolio.form</field>
+			<field name="model">wk.product.portfolio</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+					</header>
+                        <sheet>
+                            <span><label for="name" /></span> <br />
+                            <field name="name" class="h1 mb-4" readonly="True"/>
+
+                            <group>
+                                <group string="Defaults">
+                                    <label for="categ_id" />
+                                    <div>
+                                        <field class="oe_inline" name="categ_id"/><br />
+                                    </div>
+                                    <label for="product_categ_id" />
+                                    <div>
+                                        <field class="oe_inline" name="product_categ_id" /><br />
+                                    </div>
+                                    <label for="prod_type_categ_id" />
+                                    <div>
+                                        <field class="oe_inline" name="prod_type_categ_id" /><br />
+                                    </div>
+                                    <label for="model_id" />
+                                    <div>
+                                        <field class="oe_inline" name="model_id" /><br />
+                                    </div>
+                                    <label for="sub_model_id" />
+                                    <div>
+                                        <field class="oe_inline" name="sub_model_id"/><br />
+                                    </div>
+                                    <label for="body_type" />
+                                    <div>
+                                        <field class="oe_inline" name="body_type"/><br />
+                                    </div>
+                                    <label for="product_size_id" />
+                                    <div>
+                                        <field class="oe_inline" name="product_size_id"/><br />
+                                    </div>
+                                    <label for="portfolio_old_no" />
+                                    <div>
+                                        <field class="oe_inline" name="portfolio_old_no"/><br />
+                                    </div>
+                                    <label for="commitments" />
+                                    <div>
+                                        <field class="oe_inline" name="commitments"/><br />
+                                    </div>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page name="product_portfolio_vendors" string="Vendors">
+                                    <field name="vendor_ids">
+                                        <list>
+                                            <field name="name" />
+                                        </list>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="wk_product_portfolio_view_list">
+			<field name="name">wk.product.portfolio.list</field>
+			<field name="model">wk.product.portfolio</field>
+			<field name="arch" type="xml">
+				<list>
+					<field name="name"/>
+					<field name="categ_id"/>
+					<field name="product_categ_id" />
+					<field name="prod_type_categ_id"/>
+					<field name="model_id"/>
+					<field name="sub_model_id" />
+					<field name="body_type"/>
+					<field name="product_size_id"/>
+					<field name="portfolio_old_no"/>
+                    <field name="commitments"/>
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="wk_product_portfolio_action">
+			<field name="name">Product Portfolio</field>
+            <field name="path">product-portfolio</field>
+			<field name="res_model">wk.product.portfolio</field>
+			<field name="view_mode">list,form</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_product_portfolio_view_list" />
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No product portfolio found. Let's create one!
+                </p>
+            </field>
+
+		</record>
+
+		<menuitem action="wk_product_portfolio_action" id="menu_wk_product_portfolio" sequence="1" parent="sale.product_menu_catalog" groups="wk_franchisee_management.franchisee_security_manager_group"/>
+	</data>
+</odoo>
