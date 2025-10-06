@@ -1,0 +1,234 @@
+<odoo>
+	<data>
+
+        <record model="ir.ui.view" id="wk_field_values_view_form">
+			<field name="name">wk.field.values.form</field>
+			<field name="model">wk.field.values</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+                        <group>
+                            <group>
+                                <field name="field_type" readonly="1"/>
+                                <field name="field_value" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+		<record model="ir.ui.view" id="wk_field_values_view_list">
+			<field name="name">wk.field.values.view.list</field>
+			<field name="model">wk.field.values</field>
+			<field name="arch" type="xml">
+				<list editable="bottom">
+					<field name="sequence" widget="handle" />
+					<field name="field_value" />
+				</list>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_property_available">
+			<field name="name">Is This Property Available</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','is_this_property_available')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'is_this_property_available'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_looking_for_franchisee">
+			<field name="name">Looking For This Franchisee For</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','looking_for_franchisee')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'looking_for_franchisee'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_property_status">
+			<field name="name">Your Property Status</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','property_status')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'property_status'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_profession">
+			<field name="name">Your Current Profession</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','current_profession')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'current_profession'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_experience">
+			<field name="name">Experience In Business(Yr)</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','experience_in_business')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'experience_in_business'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_firm_type">
+			<field name="name">Firm Type</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','firm_type')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'firm_type'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_age">
+			<field name="name">Age</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','age')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'age'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_working_area">
+			<field name="name">Working Area</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','working_area')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'working_area'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_warehouse_location">
+			<field name="name">Warehouse Location</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','warehouse_location')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'warehouse_location'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_showroom_location">
+			<field name="name">Showroom Location</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','showroom_location')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'showroom_location'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_wk_field_values_covering_area">
+			<field name="name">Covering Area</field>
+			<field name="res_model">wk.field.values</field>
+			<field name="view_mode">list,form</field>
+            <field name="domain">[('field_type','=','covering_area')]</field>
+            <field name="view_id" ref="wk_franchisee_management.wk_field_values_view_list" />
+            <field name="context">{'default_field_type': 'covering_area'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No records found. Let's create one!
+                </p>
+            </field>
+		</record>
+
+		<menuitem id="menu_wk_field_values_template"
+            sequence="3" parent="wk_franchisee_management.menu_franchisee_management"
+            name="Custom Fields" groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="1" id="menu_wk_field_values_age"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Age" action="action_wk_field_values_age"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="2" id="menu_wk_field_values_firm_type"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Firm Type" action="action_wk_field_values_firm_type"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="3" id="menu_wk_field_values_experience"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Experience In Business(Yr)" action="action_wk_field_values_experience"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="4" id="menu_wk_field_values_profession"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Your Current Profession" action="action_wk_field_values_profession"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="5" id="menu_wk_field_values_property_status"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Your Property Status" action="action_wk_field_values_property_status"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="6" id="menu_wk_field_values_looking_for_franchisee"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Looking For This Franchisee For" action="action_wk_field_values_looking_for_franchisee"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="7" id="menu_wk_field_values_property_available"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Is This Property Available" action="action_wk_field_values_property_available"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="8" id="menu_wk_field_values_working_area"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Working Area" action="action_wk_field_values_working_area"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="9" id="menu_wk_field_values_covering_area"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Covering Area" action="action_wk_field_values_covering_area"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="10" id="menu_wk_field_values_warehouse_location"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Warehouse Location" action="action_wk_field_values_warehouse_location"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+        <menuitem sequence="10" id="menu_wk_field_values_showroom_location"
+            parent="wk_franchisee_management.menu_wk_field_values_template"
+            name="Showroom Location" action="action_wk_field_values_showroom_location"
+            groups="wk_franchisee_management.franchisee_security_manager_group" />
+	</data>
+</odoo>
