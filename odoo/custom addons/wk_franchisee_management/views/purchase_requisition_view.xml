@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="franchisee_purchase_requisition_form" model="ir.ui.view">
+            <field name="name">purchase.requisition.form.franchisee.inherit</field>
+            <field name="model">purchase.requisition</field>
+            <field name="inherit_id" ref="purchase_requisition.view_purchase_requisition_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_draft']" position="attributes">
+                    <attribute name="invisible">state == 'draft'</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='vendor_id']" position="after">
+                    <field name="pricing_based_on" widget="selection" readonly="state != 'draft'" />
+                </xpath>
+
+                <xpath expr="//field[@name='requisition_type']" position="after">
+                    <field name="manual_quantity_action" widget="radio" readonly="state != 'draft'" options="{'horizontal': True}" />
+                </xpath>
+
+                <xpath expr="//page[@name='products']" position="before">
+                    <page name="item_groups" string="Item Groups" invisible="pricing_based_on != 'item_group'">
+                        <field name="item_group_line_ids" readonly="state != 'draft'">
+                            <list string="Item Groups" editable="bottom">
+                                <field name="item_group_id" />
+                                <field name="itemgroup_description_variants" invisible="itemgroup_description_variants == ''"/>
+                                <field name="product_qty"/>
+                                <field name="item_group_uom_id" string="UoM" groups="uom.group_uom" optional="show" required="item_group_id"/>
+                                <field name="price_unit"/>
+                            </list>
+                            <form string="Item Groups">
+                                <group>
+                                    <field name="item_group_id" />
+                                    <field name="itemgroup_description_variants" />
+                                    <field name="product_qty" />
+                                    <field name="item_group_uom_id" groups="uom.group_uom" />
+                                    <field name="price_unit" />
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='line_ids']" position="attributes">
+                    <attribute name="readonly">state != 'draft'</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
